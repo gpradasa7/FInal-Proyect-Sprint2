@@ -25,7 +25,7 @@ export default function Profile() {
       <ImgProfil src={ImgProfile} alt="profile" />
       <H2profile>Jenny Wilson</H2profile>
       <SelectProfile>
-        <ImgIcon src={account} alt="first-icon" />{" "}
+        <ImgIcon src={account} alt="first-icon" />
         <SpanProfile>Account edit</SpanProfile>
         <ImgIcon2 src={next} alt="second-icon" />
       </SelectProfile>
@@ -35,17 +35,17 @@ export default function Profile() {
         <ImgIcon2 src={next} alt="second-icon" />
       </SelectProfile>
       <SelectProfile>
-        <ImgIcon src={payment} alt="first-icon" />{" "}
+        <ImgIcon src={payment} alt="first-icon" />
         <SpanProfile>Payment</SpanProfile>
         <ImgIcon2 src={next} alt="second-icon" />
       </SelectProfile>
       <SelectProfile>
-        <ImgIcon src={language} alt="first-icon" />{" "}
+        <ImgIcon src={language} alt="first-icon" />
         <SpanProfile>Language</SpanProfile>
         <ImgIcon2 src={next} alt="second-icon" />
       </SelectProfile>
       <SelectProfile>
-        <ImgIcon src={location} alt="first-icon" />{" "}
+        <ImgIcon src={location} alt="first-icon" />
         <SpanProfile>Location</SpanProfile>
         <ImgIcon2 src={next} alt="second-icon" />
       </SelectProfile>
@@ -54,7 +54,7 @@ export default function Profile() {
         <ImgIcon2 src={next} alt="second-icon" />
       </SelectProfile>
       <SelectProfile>
-        <ImgIcon src={support} alt="first-icon" />{" "}
+        <ImgIcon src={support} alt="first-icon" />
         <SpanProfile>Support</SpanProfile>
         <ImgIcon2 src={next} alt="second-icon" />
       </SelectProfile>
