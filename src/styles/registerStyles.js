@@ -22,6 +22,7 @@ export const RegBackground = styled.div`
   align-items: center;
   width: 100%;
   height: 95vh;
+  overflow: hidden;
 `;
 export const ImgReg = styled.img`
   max-width: 370px;
@@ -73,3 +74,5 @@ export const Input = styled.input`
   border: none;
   border-bottom: 0.5px solid #ffe031;
 `;
+
+export const SpanInfo = styled.span``;

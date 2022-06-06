@@ -4,17 +4,33 @@ import {
   RegBackground,
   P,
   NextButton,
+  SpanInfo,
 } from "../../styles/registerStyles";
-import register from "../../assets/img-register1.png";
+import location from "../../assets/img-location.png";
 
-export default function Register1() {
+export default function Location() {
   return (
     <RegBackground>
-      <ImgReg src={register} alt="img-register" />
-      <P>
-        Choose what to eat choosing from a variety of restaurants from the list
+      <P
+        style={{
+          position: "absolute",
+          top: "10.32%",
+        }}
+      >
+        Allow access to geo data on the device mark your address on the map
       </P>
-      <NextButton>Next</NextButton>
+      <ImgReg
+        src={location}
+        alt="img-location"
+        style={{
+          position: "absolute",
+          top: "19.91%",
+          width: "92%",
+          borderRadius: "20px",
+        }}
+      />
+      <SpanInfo>Where I am ?</SpanInfo>
+      <NextButton>Confirm</NextButton>
     </RegBackground>
   );
 }

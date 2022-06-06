@@ -1,4 +1,6 @@
 import React from "react";
+
+/* import Location from "../components/registerComp/location"; */
 /* import CreateAccount from "../components/registerComp/createAccount"; */
 /* import Register5 from "../components/registerComp/register5"; */
 /* import Register4 from "../components/registerComp/register4"; */
@@ -18,6 +20,7 @@ export default function Register() {
       {/*      <Register4 /> */}
       {/*       <Register5 /> */}
       {/*       <CreateAccount /> */}
+      {/*       <Location /> */}
     </>
   );
 }
