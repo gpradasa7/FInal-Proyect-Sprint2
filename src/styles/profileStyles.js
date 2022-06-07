@@ -54,3 +54,12 @@ export const IconChangePhoto = styled.img`
     cursor: pointer;
   }
 `;
+
+export const ChatTextArea = styled.div`
+  display: block;
+  position: absolute;
+  bottom: 4.74%;
+  width: 95%;
+  height: 44px;
+  align-items: center;
+`;
