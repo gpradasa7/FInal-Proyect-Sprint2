@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { ProductDetail } from "../components/homeComp/ProductDetail";
+import RestaurantDishes from "../components/homeComp/RestaurantDishes";
 import ProfileChatSupport from "../components/profileComp/profileChatSupport";
 
 import Home from "../containers/Home";
@@ -16,6 +18,9 @@ const AppRoutes = () => {
       <Routes>
         {/* Rutas publicas */}
         <Route path="/" element={<Home />} />
+        <Route path="/rest:name" element={<RestaurantDishes />} />
+
+        <Route path="/rest/detail:name" element={<ProductDetail />} />
         <Route path="/profile/edit" element={<ProfileEdit />} />
         <Route path="/profile/support" element={<ProfileSupport />} />
         <Route path="/profile/chat" element={<ProfileChatSupport />} />

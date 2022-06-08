@@ -37,7 +37,7 @@ export const ImgIcon2 = styled.img`
 export const IconBack = styled.img`
   display: block;
   position: absolute;
-  top: 64px;
+  top: 24px;
   left: 17px;
 
   &:hover {
