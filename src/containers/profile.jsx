@@ -18,6 +18,8 @@ import {
   SpanProfile,
 } from "../styles/profileStyles";
 import { RegBackground } from "../styles/registerStyles";
+import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   return (
@@ -25,39 +27,76 @@ export default function Profile() {
       <ImgProfil src={ImgProfile} alt="profile" />
       <H2profile>Jenny Wilson</H2profile>
       <SelectProfile>
-        <ImgIcon src={account} alt="first-icon" />
-        <SpanProfile>Account edit</SpanProfile>
-        <ImgIcon2 src={next} alt="second-icon" />
+        <Link
+          to="/profile/edit"
+          style={{ textDecoration: "none", color: "#414141" }}
+        >
+          <ImgIcon src={account} alt="first-icon" />
+          <SpanProfile>Account edit</SpanProfile>
+          <ImgIcon2 src={next} alt="second-icon" />
+        </Link>
       </SelectProfile>
       <SelectProfile>
-        <ImgIcon src={notification} alt="first-icon" />
-        <SpanProfile>Notifications</SpanProfile>
-        <ImgIcon2 src={next} alt="second-icon" />
+        <Link
+          to="/profile/notifications"
+          style={{ textDecoration: "none", color: "#414141" }}
+        >
+          <ImgIcon src={notification} alt="first-icon" />
+          <SpanProfile>Notifications</SpanProfile>
+          <ImgIcon2 src={next} alt="second-icon" />
+        </Link>
       </SelectProfile>
       <SelectProfile>
-        <ImgIcon src={payment} alt="first-icon" />
-        <SpanProfile>Payment</SpanProfile>
-        <ImgIcon2 src={next} alt="second-icon" />
+        <Link
+          to="/profile/payment"
+          style={{ textDecoration: "none", color: "#414141" }}
+        >
+          <ImgIcon src={payment} alt="first-icon" />
+          <SpanProfile>Payment</SpanProfile>
+          <ImgIcon2 src={next} alt="second-icon" />
+        </Link>
       </SelectProfile>
       <SelectProfile>
-        <ImgIcon src={language} alt="first-icon" />
-        <SpanProfile>Language</SpanProfile>
-        <ImgIcon2 src={next} alt="second-icon" />
+        <Link
+          to="profile/language"
+          style={{ textDecoration: "none", color: "#414141" }}
+        >
+          <ImgIcon src={language} alt="first-icon" />
+          <SpanProfile>Language</SpanProfile>
+          <ImgIcon2 src={next} alt="second-icon" />
+        </Link>
       </SelectProfile>
       <SelectProfile>
-        <ImgIcon src={location} alt="first-icon" />
-        <SpanProfile>Location</SpanProfile>
-        <ImgIcon2 src={next} alt="second-icon" />
+        <Link
+          to="/profile/location"
+          style={{ textDecoration: "none", color: "#414141" }}
+        >
+          <ImgIcon src={location} alt="first-icon" />
+          <SpanProfile>Location</SpanProfile>
+          <ImgIcon2 src={next} alt="second-icon" />
+        </Link>
       </SelectProfile>
       <SelectProfile>
-        <ImgIcon src={faq} alt="first-icon" /> <SpanProfile>FAQ</SpanProfile>
-        <ImgIcon2 src={next} alt="second-icon" />
+        <Link
+          to="/profile/faqs"
+          style={{ textDecoration: "none", color: "#414141" }}
+        >
+          <ImgIcon src={faq} alt="first-icon" /> <SpanProfile>FAQ</SpanProfile>
+          <ImgIcon2 src={next} alt="second-icon" />
+        </Link>
       </SelectProfile>
+
       <SelectProfile>
-        <ImgIcon src={support} alt="first-icon" />
-        <SpanProfile>Support</SpanProfile>
-        <ImgIcon2 src={next} alt="second-icon" />
+        <Link
+          to="/profile/support"
+          style={{ textDecoration: "none", color: "#414141" }}
+        >
+          <ImgIcon src={support} alt="first-icon" />
+          <SpanProfile>Support</SpanProfile>
+          <ImgIcon2 src={next} alt="second-icon" />
+        </Link>
       </SelectProfile>
+      <Navbar />
     </RegBackground>
   );
 }

@@ -9,12 +9,20 @@ import {
   InputCheck,
 } from "../../styles/producDetailStyles";
 import { NextButton, P, RegBackground } from "../../styles/registerStyles";
+import { IconBack } from "../../styles/profileStyles";
 
+import back from "../../assets/icon-back.png";
 import time from "../../assets/icon-detail-time.png";
 import dish1 from "../../assets/img-detail-head.png";
 import { H2profile, SpanProfile } from "../../styles/profileStyles";
+import { useNavigate } from "react-router-dom";
 
 export const ProductDetail = () => {
+  const navigate = useNavigate();
+
+  const handlerReturn = () => {
+    navigate(-1);
+  };
   return (
     <RegBackground
       style={{
@@ -25,6 +33,7 @@ export const ProductDetail = () => {
         overflow: "initial",
       }}
     >
+      <IconBack onClick={handlerReturn} src={back} alt="second-icon" />
       <ImgHead>
         <img src={dish1} alt="" />
       </ImgHead>
@@ -90,14 +99,17 @@ export const ProductDetail = () => {
           <InputCheck type="checkbox" name="tomatoes" id="" />
           <label htmlFor="tomatoes">Tomatoes</label>
         </Form>
+        <span style={{ float: "right", margin: "5px 0" }}>+2$</span>
         <Form>
           <InputCheck type="checkbox" name="grain" id="" />
           <label htmlFor="grain">Grain</label>
         </Form>
+        <span style={{ float: "right", margin: "5px 0" }}>+1$</span>
         <Form>
           <InputCheck type="checkbox" name="lettuce" id="" />
           <label htmlFor="lettuce">Lettuce leaf</label>
         </Form>
+        <span style={{ float: "right", margin: "5px 0" }}>+1$</span>
       </IngredDish>
       <BottonSection>
         <Counter>
@@ -107,9 +119,14 @@ export const ProductDetail = () => {
           style={{
             width: "189px",
             position: "initial",
+            justifyContent: "space-between",
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
           }}
         >
-          Add <span>$14.00</span>
+          <span style={{ fontSize: "14px" }}> Add </span>
+          <span style={{ fontSize: "18px" }}>$14.00</span>
         </NextButton>
       </BottonSection>
     </RegBackground>

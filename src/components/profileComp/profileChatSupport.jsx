@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ChatTextArea, H2profile, IconBack } from "../../styles/profileStyles";
 import back from "../../assets/icon-back.png";
 import send from "../../assets/icon-chat-send.png";
@@ -6,9 +7,14 @@ import send from "../../assets/icon-chat-send.png";
 import { Input, NextButton, RegBackground } from "../../styles/registerStyles";
 
 export default function ProfileChatSupport() {
+  const navigate = useNavigate();
+
+  const handlerReturn = () => {
+    navigate(-1);
+  };
   return (
     <RegBackground style={{ justifyContent: "flex-start", marginTop: "50px" }}>
-      <IconBack src={back} alt="second-icon" />
+      <IconBack onClick={handlerReturn} src={back} alt="second-icon" />
       <H2profile>Chat with specialist</H2profile>
 
       <ChatTextArea>

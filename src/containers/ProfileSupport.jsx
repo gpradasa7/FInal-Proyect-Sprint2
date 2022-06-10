@@ -16,8 +16,14 @@ import {
   SpanProfile,
 } from "../styles/profileStyles";
 import { RegBackground } from "../styles/registerStyles";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ProfileSupport() {
+  const navigate = useNavigate();
+
+  const handlerReturn = () => {
+    navigate(-1);
+  };
   return (
     <RegBackground style={{ justifyContent: "flex-start", marginTop: "50px" }}>
       <H2profile>Support</H2profile>
@@ -26,16 +32,21 @@ export default function ProfileSupport() {
         src={ImgSupport}
         alt="support"
       />
-      <IconBack src={back} alt="second-icon" />
+      <IconBack onClick={handlerReturn} src={back} alt="second-icon" />
       <SelectProfile>
         <ImgIcon src={support} alt="first-icon" />
         <SpanProfile>Support</SpanProfile>
         <ImgIcon2 src={next} alt="second-icon" />
       </SelectProfile>
       <SelectProfile>
-        <ImgIcon src={chat} alt="first-icon" />
-        <SpanProfile>Live chat</SpanProfile>
-        <ImgIcon2 src={next} alt="second-icon" />
+        <Link
+          to="/profile/chat"
+          style={{ textDecoration: "none", color: "#414141" }}
+        >
+          <ImgIcon src={chat} alt="first-icon" />
+          <SpanProfile>Live chat</SpanProfile>
+          <ImgIcon2 src={next} alt="second-icon" />
+        </Link>
       </SelectProfile>
       <SelectProfile>
         <ImgIcon src={mail} alt="first-icon" />

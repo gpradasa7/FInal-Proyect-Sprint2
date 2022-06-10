@@ -22,11 +22,17 @@ import dish1 from "../../assets/img-dish-1.png";
 import dishplate from "../../assets/img-dish-plate.png";
 import { IconBack } from "../../styles/profileStyles";
 import { Imglogo, RegBackground } from "../../styles/registerStyles";
+import { useNavigate } from "react-router-dom";
 
 export default function RestaurantDishes() {
+  const navigate = useNavigate();
+
+  const handlerReturn = () => {
+    navigate(-1);
+  };
   return (
     <RegBackground>
-      <IconBack src={back} alt="second-icon" />
+      <IconBack onClick={handlerReturn} src={back} alt="second-icon" />
       <Imglogo
         style={{
           display: "block",

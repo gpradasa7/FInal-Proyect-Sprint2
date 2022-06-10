@@ -74,6 +74,7 @@ export const Resto = styled.div`
 `;
 export const ImgResto = styled.img`
   width: 104px;
+  height: 94px;
   border-radius: 10px;
   line-height: 16px;
   display: inline-block;

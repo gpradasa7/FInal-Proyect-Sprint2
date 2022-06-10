@@ -18,6 +18,7 @@ import {
 import { RegBackground, SpanInfo } from "../styles/registerStyles";
 import location from "../assets/icon-home-location.png";
 import dish1 from "../assets/img-dish-1.png";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -49,51 +50,72 @@ export default function Home() {
       <FilterResult>
         <Resto>
           <ImgResto src={dish1} alt="Resto1" />
+
           <RestoDescription>
-            <TitleResto>Pardes Restaurant</TitleResto>
-            <PointsResto>★★★☆☆</PointsResto>
-            <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
-            <PriceResto>
-              Before you{" "}
-              <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
-            </PriceResto>
+            <Link
+              to="/rest/detail:name"
+              style={{ textDecoration: "none", color: "#414141" }}
+            >
+              <TitleResto>Pardes Restaurant</TitleResto>
+              <PointsResto>★★★☆☆</PointsResto>
+              <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
+              <PriceResto>
+                Before you{" "}
+                <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
+              </PriceResto>
+            </Link>
           </RestoDescription>
         </Resto>
         <Resto>
           <ImgResto src={dish1} alt="Resto2" />
-          <RestoDescription>
-            <TitleResto>Glamour Kafe</TitleResto>
-            <PointsResto>★★★☆☆</PointsResto>
-            <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
-            <PriceResto>
-              Before you{" "}
-              <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
-            </PriceResto>
-          </RestoDescription>
+          <Link
+            to="/rest/detail:name"
+            style={{ textDecoration: "none", color: "#414141" }}
+          >
+            <RestoDescription>
+              <TitleResto>Glamour Kafe</TitleResto>
+              <PointsResto>★★★☆☆</PointsResto>
+              <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
+              <PriceResto>
+                Before you{" "}
+                <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
+              </PriceResto>
+            </RestoDescription>
+          </Link>
         </Resto>
         <Resto>
           <ImgResto src={dish1} alt="Resto3" />
-          <RestoDescription>
-            <TitleResto>Aromat Bakery</TitleResto>
-            <PointsResto>★★★★☆</PointsResto>
-            <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
-            <PriceResto>
-              Before you{" "}
-              <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
-            </PriceResto>
-          </RestoDescription>
+          <Link
+            to="/rest/detail:name"
+            style={{ textDecoration: "none", color: "#414141" }}
+          >
+            <RestoDescription>
+              <TitleResto>Aromat Bakery</TitleResto>
+              <PointsResto>★★★★☆</PointsResto>
+              <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
+              <PriceResto>
+                Before you{" "}
+                <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
+              </PriceResto>
+            </RestoDescription>
+          </Link>
         </Resto>
         <Resto>
           <ImgResto src={dish1} alt="Resto4" />
-          <RestoDescription>
-            <TitleResto>Last night Restaurant & kafe</TitleResto>
-            <PointsResto>★★★☆☆</PointsResto>
-            <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
-            <PriceResto>
-              Before you{" "}
-              <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
-            </PriceResto>
-          </RestoDescription>
+          <Link
+            to="/rest/detail:name"
+            style={{ textDecoration: "none", color: "#414141" }}
+          >
+            <RestoDescription>
+              <TitleResto>Last night Restaurant & kafe</TitleResto>
+              <PointsResto>★★★☆☆</PointsResto>
+              <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
+              <PriceResto>
+                Before you{" "}
+                <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
+              </PriceResto>
+            </RestoDescription>
+          </Link>
         </Resto>
       </FilterResult>
 

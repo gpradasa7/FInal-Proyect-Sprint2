@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { RegBackground } from "../styles/registerStyles";
 import { IconImg, NavContent } from "../styles/NavContentStyles";
@@ -10,14 +11,24 @@ export default function Navbar() {
   return (
     <RegBackground>
       <NavContent>
-        <IconImg src={iconHome} alt="icon-home" />
-        <IconImg
-          src={iconSearch}
-          style={{ height: "29px" }}
-          alt="icon-search"
-        />
-        <IconImg src={iconRecent} alt="icon-recent" />
-        <IconImg src={iconProfile} alt="icon-profile" />
+        <Link to="/home">
+          <IconImg src={iconHome} alt="icon-home" />
+        </Link>
+        <Link to="/search">
+          <IconImg
+            src={iconSearch}
+            style={{ height: "29px" }}
+            alt="icon-search"
+          />
+        </Link>
+
+        <Link to="/orders">
+          <IconImg src={iconRecent} alt="icon-recent" />
+        </Link>
+
+        <Link to="/profile">
+          <IconImg src={iconProfile} alt="icon-profile" />
+        </Link>
       </NavContent>
     </RegBackground>
   );

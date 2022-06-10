@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   RegBackground,
-  P,
   NextButton,
   H2,
   Input,
@@ -43,7 +43,9 @@ export default function CreateAccount() {
         }}
       />
 
-      <NextButton>Sing In</NextButton>
+      <NextButton>
+        <Link to="/home">Sing In</Link>
+      </NextButton>
     </RegBackground>
   );
 }

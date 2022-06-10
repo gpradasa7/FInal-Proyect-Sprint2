@@ -6,6 +6,7 @@ import {
   NextButton,
 } from "../../styles/registerStyles";
 import register from "../../assets/img-register2.png";
+import { Link } from "react-router-dom";
 
 export default function Register2() {
   return (
@@ -14,7 +15,14 @@ export default function Register2() {
       <P>
         Choose what to eat choosing from a variety of restaurants from the list
       </P>
-      <NextButton>Next</NextButton>
+      <NextButton>
+        <Link
+          to="/register3"
+          style={{ textDecoration: "none", color: "#414141" }}
+        >
+          Next
+        </Link>
+      </NextButton>
     </RegBackground>
   );
 }

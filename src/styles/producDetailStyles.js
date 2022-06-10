@@ -20,10 +20,12 @@ export const IngredDish = styled.div`
 `;
 export const Form = styled.form`
   display: inline-flex;
-  width: 100%;
+  width: 90%;
+  margin: 5px 0;
 `;
 export const InputCheck = styled.input`
   display: inline-block;
+  margin-right: 7px;
 
   &:focus-visible {
     background: #ffe031;
@@ -34,6 +36,7 @@ export const Counter = styled.div`
   display: flex;
   width: 103px;
   height: 44px;
+  padding: 0 10px;
   background: #f2f2f2;
   border-radius: 10px;
   align-items: center;
