@@ -7,6 +7,7 @@ import {
   SpanInfo,
 } from "../../styles/registerStyles";
 import location from "../../assets/img-location.png";
+import { Link } from "react-router-dom";
 
 export default function Location() {
   return (
@@ -30,7 +31,11 @@ export default function Location() {
         }}
       />
       <SpanInfo>Where I am ?</SpanInfo>
-      <NextButton>Confirm</NextButton>
+      <NextButton>
+        <Link to="/home" style={{ textDecoration: "none", color: "#414141" }}>
+          Confirm
+        </Link>
+      </NextButton>
     </RegBackground>
   );
 }

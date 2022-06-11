@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ImgProfile from "../assets/img-profile.png";
 import account from "../assets/icon-profile-account.png";
 import notification from "../assets/icon-profile-notification.png";
@@ -22,10 +22,25 @@ import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 
 export default function Profile() {
+  const [users, setUsers] = useState([]);
+
+  const getData = async () => {
+    console.log("GET");
+
+    const resp = await fetch("https://crud2-heroku.herokuapp.com/usuarios");
+    const data = await resp.json();
+    setUsers(data);
+    console.log(data[0].name);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+
+  useEffect(() => {}, [users]);
   return (
     <RegBackground style={{ justifyContent: "flex-start", marginTop: "50px" }}>
       <ImgProfil src={ImgProfile} alt="profile" />
-      <H2profile>Jenny Wilson</H2profile>
+      <H2profile>{users.name}</H2profile>
       <SelectProfile>
         <Link
           to="/profile/edit"

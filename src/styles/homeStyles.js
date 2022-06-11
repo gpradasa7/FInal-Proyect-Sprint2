@@ -143,3 +143,9 @@ export const DishItem = styled.div`
 `;
 export const TitleDish = styled.div``;
 export const PriceDish = styled.div``;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+`;
