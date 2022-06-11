@@ -16,7 +16,6 @@ import ProfileEdit from "../containers/ProfileEdit";
 import ProfileSupport from "../containers/ProfileSupport";
 import Register from "../containers/Register";
 import Search from "../containers/search";
-
 const AppRoutes = () => {
   return (
     <BrowserRouter>
