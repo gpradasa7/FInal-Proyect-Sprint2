@@ -11,7 +11,7 @@ import {
 } from "../../styles/registerStyles";
 
 export default function CreateAccount() {
-  const url = "https://crud2-heroku.herokuapp.com/usuarios";
+  const url = "https://hut-food.herokuapp.com/usuarios";
   const [data, handleChange, reset] = Forms({
     name: "",
     email: "",
@@ -21,8 +21,6 @@ export default function CreateAccount() {
   const handleSubmit = async e => {
     e.preventDefault();
     axios.post(url, data).then(() => reset());
-    const dataUser = data.find(item => item.email == Forms.email);
-    sessionStorage.setItem("infoUser", JSON.stringify(dataUser));
   };
 
   useEffect(() => {}, []);
@@ -38,23 +36,13 @@ export default function CreateAccount() {
       >
         <Input
           type="text"
+          value={data.name}
+          onChange={handleChange}
           name="name"
           placeholder="NAME"
           style={{
             position: "absolute",
             top: "18.16%",
-            width: "95%",
-          }}
-        />
-        <Input
-          type="text"
-          value={data.name}
-          onChange={handleChange}
-          name="name"
-          placeholder="Ingresa tu nombre"
-          style={{
-            position: "absolute",
-            top: "28.16%",
             width: "95%",
           }}
         />
@@ -82,15 +70,12 @@ export default function CreateAccount() {
             width: "95%",
           }}
         />
-
-        <NextButton type="submit">
-          <Link
-            style={{ textDecoration: "none", color: "#414141" }}
-            to="/location"
-          >
-            Sing In
-          </Link>
-        </NextButton>
+        <Link
+          style={{ textDecoration: "none", color: "#414141" }}
+          to="/location"
+        >
+          <NextButton type="submit">Sing In</NextButton>
+        </Link>
       </Form>
     </RegBackground>
   );

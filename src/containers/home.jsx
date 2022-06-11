@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import {
   ButtonFilter,
@@ -17,10 +17,27 @@ import {
 } from "../styles/homeStyles";
 import { RegBackground, SpanInfo } from "../styles/registerStyles";
 import location from "../assets/icon-home-location.png";
-import dish1 from "../assets/img-dish-1.png";
-import { Link } from "react-router-dom";
+import PintarRestaurants from "../components/homeComp/PintarRestaurants";
 
 export default function Home() {
+  const [users, setUsers] = useState([]);
+
+  const getData = async () => {
+    const resp = await fetch("https://hut-food.herokuapp.com/restaurantes");
+    const data = await resp.json();
+    setUsers(data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  useEffect(() => {}, [users]);
+
+  const dataKeys = users.map(resto => ({
+    ...resto,
+    key: resto.name,
+  }));
   return (
     <RegBackground>
       <SectionLocation>
@@ -48,75 +65,10 @@ export default function Home() {
       </FilterSection>
 
       <FilterResult>
-        <Resto>
-          <ImgResto src={dish1} alt="Resto1" />
-
-          <RestoDescription>
-            <Link
-              to="/rest/detail:name"
-              style={{ textDecoration: "none", color: "#414141" }}
-            >
-              <TitleResto>Pardes Restaurant</TitleResto>
-              <PointsResto>★★★☆☆</PointsResto>
-              <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
-              <PriceResto>
-                Before you{" "}
-                <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
-              </PriceResto>
-            </Link>
-          </RestoDescription>
-        </Resto>
-        <Resto>
-          <ImgResto src={dish1} alt="Resto2" />
-          <Link
-            to="/rest/detail:name"
-            style={{ textDecoration: "none", color: "#414141" }}
-          >
-            <RestoDescription>
-              <TitleResto>Glamour Kafe</TitleResto>
-              <PointsResto>★★★☆☆</PointsResto>
-              <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
-              <PriceResto>
-                Before you{" "}
-                <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
-              </PriceResto>
-            </RestoDescription>
-          </Link>
-        </Resto>
-        <Resto>
-          <ImgResto src={dish1} alt="Resto3" />
-          <Link
-            to="/rest/detail:name"
-            style={{ textDecoration: "none", color: "#414141" }}
-          >
-            <RestoDescription>
-              <TitleResto>Aromat Bakery</TitleResto>
-              <PointsResto>★★★★☆</PointsResto>
-              <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
-              <PriceResto>
-                Before you{" "}
-                <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
-              </PriceResto>
-            </RestoDescription>
-          </Link>
-        </Resto>
-        <Resto>
-          <ImgResto src={dish1} alt="Resto4" />
-          <Link
-            to="/rest/detail:name"
-            style={{ textDecoration: "none", color: "#414141" }}
-          >
-            <RestoDescription>
-              <TitleResto>Last night Restaurant & kafe</TitleResto>
-              <PointsResto>★★★☆☆</PointsResto>
-              <TimePrepairResto>Work time 09:30 - 23:00</TimePrepairResto>
-              <PriceResto>
-                Before you{" "}
-                <span style={{ fontWeight: "300", color: "#414141" }}>4$</span>
-              </PriceResto>
-            </RestoDescription>
-          </Link>
-        </Resto>
+        {" "}
+        {dataKeys.map(resto => (
+          <PintarRestaurants key={resto.index} {...resto} />
+        ))}
       </FilterResult>
 
       <Navbar />

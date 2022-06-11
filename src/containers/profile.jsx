@@ -27,11 +27,15 @@ export default function Profile() {
   const getData = async () => {
     console.log("GET");
 
-    const resp = await fetch("https://crud2-heroku.herokuapp.com/usuarios");
+    const resp = await fetch("https://hut-food.herokuapp.com/usuarios");
     const data = await resp.json();
     setUsers(data);
-    console.log(data[0].name);
   };
+  const dataKeys = users.map(user => ({
+    ...user,
+    key: user.name,
+  }));
+
   useEffect(() => {
     getData();
   }, []);
@@ -40,7 +44,7 @@ export default function Profile() {
   return (
     <RegBackground style={{ justifyContent: "flex-start", marginTop: "50px" }}>
       <ImgProfil src={ImgProfile} alt="profile" />
-      <H2profile>{users.name}</H2profile>
+      <H2profile>{dataKeys[0]}</H2profile>
       <SelectProfile>
         <Link
           to="/profile/edit"
