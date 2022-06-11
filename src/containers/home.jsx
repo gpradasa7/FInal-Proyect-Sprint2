@@ -3,17 +3,10 @@ import Navbar from "../components/Navbar";
 import {
   ButtonFilter,
   ButtonFilterSection,
-  Resto,
   FilterResult,
   FilterSection,
-  ImgResto,
-  PointsResto,
-  PriceResto,
   SectionLocation,
-  TimePrepairResto,
-  TitleResto,
   TitleFilter,
-  RestoDescription,
 } from "../styles/homeStyles";
 import { RegBackground, SpanInfo } from "../styles/registerStyles";
 import location from "../assets/icon-home-location.png";
@@ -54,7 +47,7 @@ export default function Home() {
 
       <FilterSection>
         <TitleFilter>Restaurants and cafes</TitleFilter>
-        <ButtonFilterSection>
+        <ButtonFilterSection style={{ height: "60px" }}>
           <ButtonFilter>ALL</ButtonFilter>
           <ButtonFilter>Fast food</ButtonFilter>
           <ButtonFilter>Pizza</ButtonFilter>
